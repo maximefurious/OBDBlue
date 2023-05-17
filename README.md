@@ -13,12 +13,12 @@ OBD Communication: With OBDBlue, you can effortlessly send and receive commands 
 Cross-Platform Compatibility: This plugin is built to support both iOS and Android platforms, making it easier for developers to create OBD-enabled apps that can reach a wider audience. You can leverage OBDBlue's capabilities and build powerful OBD diagnostic solutions for various mobile devices
 
 ## Usage
-i - Import the OBDBlue plugin into your Flutter project.
+1 - Import the OBDBlue plugin into your Flutter project.
 ```
 import 'package:obdblue/obdblue.dart';
 ```
 
-ii - Establish a Bluetooth connection with the OBD module
+2 - Establish a Bluetooth connection with the OBD module.
 ```
 OBDBlue.connectToDevice(deviceAddress).then((connected) {
   if (connected) {
@@ -28,6 +28,14 @@ OBDBlue.connectToDevice(deviceAddress).then((connected) {
     // Connection failed, handle the error
     // ...
   }
+});
+```
+
+3 - Send commands and retrieve OBD data.
+```
+OBDBlue.sendCommand('01 0D').then((response) {
+  // Process the response from the OBD module
+  // ...
 });
 ```
 
